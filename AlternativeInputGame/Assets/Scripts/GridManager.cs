@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using GestureRecognizer;
 using UnityEngine;
 using TMPro;
 
@@ -19,6 +20,10 @@ public class GridManager : MonoBehaviour
     [Header("UI")] 
     [SerializeField] private TextMeshProUGUI currentTileInfo;
 
+
+    public Recognizer _Recognizer;
+    private RecognitionResult _lastGesture;
+    private RecognitionResult _result;
 
     private void Awake()
     {
@@ -56,5 +61,22 @@ public class GridManager : MonoBehaviour
     {
         TileSelected.Invoke(gridTile);
     }
-    
+
+    private void Update()
+    {
+        if (_result.gesture != null)
+        {
+            _lastGesture.gesture = _result.gesture;
+        }
+
+        if (_lastGesture.gesture == _Recognizer.patterns[1])
+        {
+            Debug.Log("Pattern 1");
+        }
+        else
+        {
+            Debug.Log("Pattern 2");
+ 
+        }
+    }
 }
