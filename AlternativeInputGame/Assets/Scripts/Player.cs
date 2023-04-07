@@ -5,8 +5,48 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //Accessing results data
+    public GameObject exampleGesturePatternObject;
+    private ExampleGestureHandler _exampleGestureHandler;
+    
+    
     [SerializeField] private GridManager _gridManager;
     [SerializeField] private float moveSpeed = 5f;
+
+    private string lastGestureID = "";
+    private bool waitingForInput;
+
+    private void Awake()
+    {
+        _exampleGestureHandler = exampleGesturePatternObject.GetComponent<ExampleGestureHandler>();
+    }
+
+    private void Update()
+    {
+        GetVariables();
+        Debug.Log("Last Gesture: " + lastGestureID + "   wait for input: " + waitingForInput);
+
+        if (!waitingForInput)
+        {
+            if (lastGestureID == "up")
+            {
+                Debug.Log("HE WENT UP YOOOOOOOOOOOOOOOOOOOO");
+            }
+            _exampleGestureHandler.waitingForInput = true;
+
+        }
+    }
+
+    private void GetVariables()
+    {
+        lastGestureID =  _exampleGestureHandler.lastGestureID;
+        
+        waitingForInput = _exampleGestureHandler.waitingForInput;
+    }
+
+    private void GetGestureID()
+    {
+    }
 
     private void OnEnable()
     {

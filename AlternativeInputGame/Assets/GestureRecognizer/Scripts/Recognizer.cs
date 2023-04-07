@@ -102,7 +102,9 @@ namespace GestureRecognizer
             timer.Stop();
 
 			found.recognitionTime = (float)(timer.ElapsedMilliseconds / 1000.0);
-
+            
+            //Debug.Log("Found pattern: " + found.gesture.id);
+            
             return found;
         }
 

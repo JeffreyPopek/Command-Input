@@ -5,15 +5,19 @@ using UnityEngine.UI;
 using GestureRecognizer;
 using System.Linq;
 
-public class ExampleGestureHandler : MonoBehaviour {
-
+public class ExampleGestureHandler : MonoBehaviour
+{
+	public string lastGestureID = "";
+	public bool waitingForInput = true;
+	
 	public Text textResult;
 
 	public Transform referenceRoot;
 
 	GesturePatternDraw[] references;
 
-	void Start () {
+	void Start () 
+	{
 		references = referenceRoot.GetComponentsInChildren<GesturePatternDraw> ();
 	}
 
@@ -26,8 +30,16 @@ public class ExampleGestureHandler : MonoBehaviour {
 	public void OnRecognize(RecognitionResult result){
 		StopAllCoroutines ();
 		ShowAll ();
-		if (result != RecognitionResult.Empty) {
-			textResult.text = result.gesture.id + "\n" + Mathf.RoundToInt (result.score.score * 100) + "%";
+		if (result != RecognitionResult.Empty)
+		{
+			textResult.text = result.gesture.id;
+			//+ "\n" + Mathf.RoundToInt (result.score.score * 100) + "%";
+
+			lastGestureID = result.gesture.id;
+
+			waitingForInput = false;
+			//Debug.Log("Last gesture: " + lastGestureID);
+			
 			StartCoroutine (Blink (result.gesture.id));
 		} else {
 			textResult.text = "?";
