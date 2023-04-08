@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //movement
+    private bool isMoving;
+    private Vector3 originalPosition, targetPosition;
+    private float timeToMove = 0.2f;
+    
     //Accessing results data
     public GameObject exampleGesturePatternObject;
     private ExampleGestureHandler _exampleGestureHandler;
@@ -31,12 +36,52 @@ public class Player : MonoBehaviour
             if (lastGestureID == "up")
             {
                 Debug.Log("HE WENT UP YOOOOOOOOOOOOOOOOOOOO");
+                StartCoroutine(MovePlayer(Vector3.up));
+            }
+            
+            if (lastGestureID == "down")
+            {
+                Debug.Log("HE WENT DOWN YOOOOOOOOOOOOOOOOOOOO");
+                StartCoroutine(MovePlayer(Vector3.down));
+            }
+            
+            if (lastGestureID == "left")
+            {
+                Debug.Log("HE WENT LEFT YOOOOOOOOOOOOOOOOOOOO");
+                StartCoroutine(MovePlayer(Vector3.left));
+            }
+            
+            if (lastGestureID == "right")
+            {
+                Debug.Log("HE WENT RIGHT YOOOOOOOOOOOOOOOOOOOO");
+                StartCoroutine(MovePlayer(Vector3.right));
             }
             _exampleGestureHandler.waitingForInput = true;
 
         }
+        
+        //movement
+        if (Input.GetKey(KeyCode.W) && !isMoving)
+        {
+            StartCoroutine(MovePlayer(Vector3.up));
+        }
+        
+        if (Input.GetKey(KeyCode.S) && !isMoving)
+        {
+            StartCoroutine(MovePlayer(Vector3.down));
+        }
+        
+        if (Input.GetKey(KeyCode.A) && !isMoving)
+        {
+            StartCoroutine(MovePlayer(Vector3.left));
+        }
+        
+        if (Input.GetKey(KeyCode.D) && !isMoving)
+        {
+            StartCoroutine(MovePlayer(Vector3.right));
+        }
     }
-
+    
     private void GetVariables()
     {
         lastGestureID =  _exampleGestureHandler.lastGestureID;
@@ -44,35 +89,25 @@ public class Player : MonoBehaviour
         waitingForInput = _exampleGestureHandler.waitingForInput;
     }
 
-    private void GetGestureID()
+    private IEnumerator MovePlayer(Vector3 direction)
     {
-    }
+        isMoving = true;
 
-    private void OnEnable()
-    {
-        _gridManager.TileSelected += OnTileSelected;
-    }
+        float elapsedTime = 0f;
 
-    private void OnDisable()
-    {
-        _gridManager.TileSelected -= OnTileSelected;
-    }
+        originalPosition = transform.position;
+        targetPosition = originalPosition + direction;
 
-    private void OnTileSelected(GridTile obj)
-    {
-        StopAllCoroutines();
-        StartCoroutine(Co_MoveTo(obj.transform.position));
-    }
-
-    private IEnumerator Co_MoveTo(Vector2 targetPosition)
-    {
-        //set target pos to tile pos when moving based on drawn input
-        while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
+        while (elapsedTime < timeToMove)
         {
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(originalPosition, targetPosition, (elapsedTime / timeToMove));
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
 
         transform.position = targetPosition;
+        
+        isMoving = false;
     }
+
 }
