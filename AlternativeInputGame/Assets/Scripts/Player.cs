@@ -3,23 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Player : MonoBehaviour
 {
-    //remaining moves
-    [SerializeField] private int remainingMoves = 5;
-    
-    //UI
-    [SerializeField] private TextMeshProUGUI movesLeftText;
-    //new tutorial
-    [SerializeField] private float moveSpeed = 5f;
+    public static Player Instance { get; private set; }
 
-    [SerializeField] private Transform movePoint;
-    
-    
-    //physics
-    [SerializeField] private Rigidbody2D _rigidbody2D;
-    
+    //Move to next tile logic
+
+    [SerializeField] private GameObject moveUpPoint;
+    [SerializeField] private GameObject moveDownPoint;
+    [SerializeField] private GameObject moveLeftPoint;
+    [SerializeField] private GameObject moveRightPoint;
+
+    //remaining moves
+    public int remainingMoves = 5;
+
     //movement
     private bool isMoving;
     private Vector3 originalPosition, targetPosition;
@@ -34,82 +33,70 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+
         _exampleGestureHandler = exampleGesturePatternObject.GetComponent<ExampleGestureHandler>();
-
-        movePoint.parent = null;
     }
-
+    
     private void Update()
     {
-
-        movesLeftText.text = remainingMoves.ToString();
-        
         GetVariables();
         Debug.Log("Last Gesture: " + lastGestureID + "   wait for input: " + waitingForInput);
 
-        
-        //FOR IN CLASS TESTING
-        
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            remainingMoves = 5;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-        
-        //^^^^^^^^^^^^^^^^^
-        //FOR IN CLASS TESTING
+        CheckGestureIDLogic();
+    }
 
-        
+    private void CheckGestureIDLogic()
+    {
         if (!waitingForInput && remainingMoves != 0)
         {
             if (lastGestureID == "up")
             {
-                Debug.Log("HE WENT UP YOOOOOOOOOOOOOOOOOOOO");
                 StartCoroutine(MovePlayer(Vector3.up));
             }
             
             if (lastGestureID == "down")
             {
-                Debug.Log("HE WENT DOWN YOOOOOOOOOOOOOOOOOOOO");
                 StartCoroutine(MovePlayer(Vector3.down));
             }
             
             if (lastGestureID == "left")
             {
-                Debug.Log("HE WENT LEFT YOOOOOOOOOOOOOOOOOOOO");
                 StartCoroutine(MovePlayer(Vector3.left));
             }
             
             if (lastGestureID == "right")
             {
-                Debug.Log("HE WENT RIGHT YOOOOOOOOOOOOOOOOOOOO");
                 StartCoroutine(MovePlayer(Vector3.right));
             }
             _exampleGestureHandler.waitingForInput = true;
             remainingMoves--;
+        }
+    }
 
+    private bool CheckForWallsLogic(Collision2D other)
+    {
+        if (other.gameObject.tag == "Wall")
+        {
+            return false;
         }
 
-        // transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
-        //
-        // if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f)
-        // {
-        //     if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f)
-        //     {
-        //         movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0, 0);
-        //     }
-        //
-        //     if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
-        //     {
-        //         movePoint.position += new Vector3(0, Input.GetAxisRaw("Vertical"), 0);
-        //     }
-        // }
-       
+        return true;
     }
+    
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Box")
+            other.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+    }
+    
 
     private void GetVariables()
     {
