@@ -9,6 +9,10 @@ public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
 
+
+    [SerializeField] private GridManager _gridManager;
+
+    [SerializeField] private float moveSpeed = 5f;
     //Move to next tile logic
 
     [SerializeField] private GameObject moveUpPoint;
@@ -30,6 +34,34 @@ public class Player : MonoBehaviour
     
     private string lastGestureID = "";
     private bool waitingForInput;
+
+
+    private void OnEnable()
+    {
+        _gridManager.TileSelected += OnTileSelected;
+    }
+
+    private void OnDisable()
+    {
+        _gridManager.TileSelected -= OnTileSelected;
+    }
+
+    private void OnTileSelected(Tile obj)
+    {
+         StopAllCoroutines();
+         StartCoroutine(Co_MoveTo(obj.transform.position));
+    }
+
+    private IEnumerator Co_MoveTo(Vector3 targetPos)
+    {
+        while (Vector3.Distance(transform.position, targetPos) > 0.01f)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        transform.position = targetPos;
+    }
 
     private void Awake()
     {
