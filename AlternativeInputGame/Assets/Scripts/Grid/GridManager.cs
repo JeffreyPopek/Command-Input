@@ -10,9 +10,18 @@ public class GridManager : MonoBehaviour
 {
     
     public static GridManager Instance { get; private set; }
-    
+
+    public bool switchingBarrier = false;
     //private Dictionary<(int, int), GameObject> cells;
     [SerializeField] private GameObject boxPrefab;
+    [SerializeField] private GameObject buttonPrefab;
+    [SerializeField] private GameObject doorPrefab;
+    [SerializeField] private GameObject playerPrefab;
+
+
+
+    [Header("Objects on Grid")] [SerializeField]
+    private int temp1, temp2;
     
     public event Action<Tile> TileSelected;
 
@@ -44,18 +53,33 @@ public class GridManager : MonoBehaviour
                 tile.transform.localPosition = tilePos;
                 tile.name = $"Tile_{x}_{y}";
 
-                if (x == 2 && y == 1)
+                // if (x == 1 && y == 1)
+                // {
+                //     GameObject player = Instantiate(playerPrefab, transform);
+                //     player.transform.localPosition = tilePos;
+                // }
+                
+                if (x == temp1 && y == temp2)
                 {
-                    //Player player = Instantiate(playerPrefab, transform);
+                    GameObject box = Instantiate(boxPrefab, transform);
+                    box.transform.localPosition = tilePos;
                 }
                 
-
-                //cells[(3, 4)] = new GameObject();//TODO replace with player
-
+                if (x == 2 && y == 3)
+                {
+                    GameObject button = Instantiate(buttonPrefab, transform);
+                    button.transform.localPosition = tilePos;
+                }
+                
                 tile.gridManager = this;
                 tile.gridCoords = new Vector2Int(x, y);
             }
         }
+    }
+
+    private void Update()
+    {
+        Debug.Log(switchingBarrier);
     }
 
     public void OnTileHoverEnter(Tile gridTile)
