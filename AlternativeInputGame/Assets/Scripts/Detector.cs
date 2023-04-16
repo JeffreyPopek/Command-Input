@@ -5,32 +5,38 @@ using UnityEngine;
 
 public class Detector : MonoBehaviour
 {
-    // public void CheckForWallsLogic(Collision2D other)
-    // {
-    //     if (other.gameObject.tag == "Wall")
-    //     {
-    //         Debug.Log("At a wall on: " + this.ToString());
-    //         //return false;
-    //     }
-    //     
-    //     Debug.Log("Not at a wall on: " + this.ToString());
-    //
-    //
-    //     //return true;
-    // }
+    public bool isAtWall = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Wall")
         {
             Debug.Log("At a wall on: " + this.ToString());
-            //return false;
+            isAtWall = true;
         }
-        
+    }
+    
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        isAtWall = false;
+    
         Debug.Log("Not at a wall on: " + this.ToString());
     
-    
-        //return true;
-        
     }
+
+    public bool GetIsAtWall()
+    {
+        return isAtWall;
+    }
+
+    // private void OnCollisionStay2D(Collision2D other)
+    // {
+    //     if (other.gameObject.tag == "Wall")
+    //     {
+    //         isAtWall = false;
+    //
+    //         Debug.Log("Not at a wall on: " + this.ToString());
+    //     }
+    // }
+    //
 }

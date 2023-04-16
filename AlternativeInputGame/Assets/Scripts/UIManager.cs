@@ -26,16 +26,32 @@ public class UIManager : MonoBehaviour
             Instance = this;
         }
 
-        movesLeftText.text = remainingMoves.ToString();
+        if (Player.Instance.canMoveThroughRed)
+        {
+            movesLeftText.text = "Red";
+        }
+        else
+        {
+            movesLeftText.text = "Blue";
+        }
 
         remainingMoves = Player.Instance.remainingMoves;
     }
 
     private void Update()
     {
-        remainingMoves = Player.Instance.remainingMoves;
-
-        Debug.Log(remainingMoves);
-        movesLeftText.text = remainingMoves.ToString();
+        // remainingMoves = Player.Instance.remainingMoves;
+        //
+        // //Debug.Log(remainingMoves);
+        // movesLeftText.text = remainingMoves.ToString();
+        
+        if (Player.Instance.canMoveThroughRed)
+        {
+            movesLeftText.text = "Red";
+        }
+        else if(!Player.Instance.canMoveThroughRed)
+        {
+            movesLeftText.text = "Blue";
+        }
     }
 }
