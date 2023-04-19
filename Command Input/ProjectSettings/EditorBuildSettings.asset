@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Gesture Test Scene.unity
     guid: 065fb7182fdb4fb4b882abee3a78cf04
   - enabled: 0
-    path: Assets/Scenes/TestLevel_Buttons.unity
+    path: 
     guid: 41d1235f3fb3d39488d3a1ea3a4bad9a
   - enabled: 0
     path: Assets/Scenes/Testing Scenes/EmptyLevelTemplate.unity
@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BarrierTest.unity
     guid: eee077a3287eaef47bd3223de17bf774
+  - enabled: 1
+    path: Assets/Scenes/Testing Scenes/Jackson_Scene.unity
+    guid: 2755b64c47e69564d8a78553bc65c0e7
+  - enabled: 1
+    path: Assets/Scenes/Testing Scenes/Tyler_Test_Level.unity
+    guid: dafa3258c01cfa249a156251623e90f3
+  - enabled: 1
+    path: Assets/Scenes/SceneHub(TESTING).unity
+    guid: b57c8d93e337de7459efa4e7b40f99a7
   m_configObjects: {}

@@ -3,24 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
 
+    public LayerMask wallLayer;
+    
     //RETRY FOR TESTING
     private Scene currentScene;
 
-    //[SerializeField] private GridManager _gridManager;
 
     [SerializeField] private float moveSpeed = 5f;
 
     public bool canMoveThroughRed = true;
-
-    private bool atWallUp, atWallDown, atWallLeft, atWallRight;
-
-    [SerializeField] private Detector upDetector, downDetector, leftDetector, rightDetector;
 
     //remaining moves
     public int remainingMoves = 5;
@@ -36,34 +34,6 @@ public class Player : MonoBehaviour
     
     private string lastGestureID = "";
     private bool waitingForInput;
-
-
-    // private void OnEnable()
-    // {
-    //     _gridManager.TileSelected += OnTileSelected;
-    // }
-    //
-    // private void OnDisable()
-    // {
-    //     _gridManager.TileSelected -= OnTileSelected;
-    // }
-    //
-    // private void OnTileSelected(Tile obj)
-    // {
-    //      StopAllCoroutines();
-    //      StartCoroutine(Co_MoveTo(obj.transform.position));
-    // }
-    //
-    // private IEnumerator Co_MoveTo(Vector3 targetPos)
-    // {
-    //     while (Vector3.Distance(transform.position, targetPos) > 0.01f)
-    //     {
-    //         transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
-    //         yield return null;
-    //     }
-    //
-    //     transform.position = targetPos;
-    // }
 
     private void Awake()
     {
@@ -82,22 +52,11 @@ public class Player : MonoBehaviour
         _exampleGestureHandler = exampleGesturePatternObject.GetComponent<ExampleGestureHandler>();
     }
 
-    private void WallLogic()
-    {
-        atWallUp = upDetector.GetIsAtWall();
-        atWallDown = downDetector.GetIsAtWall();
-        atWallLeft = leftDetector.GetIsAtWall();
-        atWallRight = rightDetector.GetIsAtWall();
-
-    }
-    
     private void Update()
     {
         GetVariables();
-        WallLogic();
         
-        Debug.Log(atWallUp + " " + atWallDown + " " + atWallLeft + " " + atWallRight);
-        Debug.Log("Last Gesture: " + lastGestureID + "   wait for input: " + waitingForInput);
+        //Debug.Log("Last Gesture: " + lastGestureID + "   wait for input: " + waitingForInput);
 
         CheckGestureIDLogic();
 
@@ -106,30 +65,92 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene(currentScene.name);
         }
         
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene(4);
+        }
+
+
+
     }
 
     private void CheckGestureIDLogic()
     {
+        //raycast
+        RaycastHit2D hit;
+        
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.up) * 1f, Color.red);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.down) * 1f, Color.red);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.left) * 1f, Color.red);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.right) * 1f, Color.red);
+
+
+        // if (hit)    
+        // {
+        //
+        //     Debug.Log("Something hit");
+        //     hit.transform.GetComponent<SpriteRenderer>().color = Color.red;
+        // }
+        // else
+        // {
+        //     Debug.Log("something not hit");
+        // }
+
         if (!waitingForInput)
         {
-            if (lastGestureID == "up" && !atWallUp)
+            if (lastGestureID == "up")
             {
-                StartCoroutine(MovePlayer(Vector3.up));
+                hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up), 1f, wallLayer);
+                if (!hit)
+                {
+                    StartCoroutine(MovePlayer(Vector3.up));
+                }
+                else
+                {
+                    Debug.Log("nah");
+                }
             }
             
-            if (lastGestureID == "down" && !atWallDown)
+            if (lastGestureID == "down")
             {
-                StartCoroutine(MovePlayer(Vector3.down));
+                hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.down), 1f, wallLayer);
+
+                if (!hit)
+                {
+                    StartCoroutine(MovePlayer(Vector3.down));
+                }
+                else
+                {
+                    Debug.Log("nah");
+                }
             }
             
-            if (lastGestureID == "left" && !atWallLeft)
+            if (lastGestureID == "left")
             {
-                StartCoroutine(MovePlayer(Vector3.left));
+                hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.left), 1f, wallLayer);
+
+                if (!hit)
+                {
+                    StartCoroutine(MovePlayer(Vector3.left));
+                }
+                else
+                {
+                    Debug.Log("nah");
+                }
             }
             
-            if (lastGestureID == "right" && !atWallRight)
+            if (lastGestureID == "right")
             {
-                StartCoroutine(MovePlayer(Vector3.right));
+                hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.right), 1f, wallLayer);
+                
+                if (!hit)
+                {
+                    StartCoroutine(MovePlayer(Vector3.right));
+                }
+                else
+                {
+                    Debug.Log("nah");
+                }
             }
             
             if (lastGestureID == "Circle")
