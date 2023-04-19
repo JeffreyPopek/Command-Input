@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private float moveSpeed = 5f;
 
-    public bool canMoveThroughRed = true;
+    public bool redBarriersActive = false;
 
     //remaining moves
     public int remainingMoves = 5;
@@ -155,7 +155,7 @@ public class Player : MonoBehaviour
             
             if (lastGestureID == "Circle")
             {
-                canMoveThroughRed = !canMoveThroughRed;
+                redBarriersActive = !redBarriersActive;
                 //Debug.Log(canMoveThroughRed);
 
                 //return and enum, have a checker in update that does to worldmanager
