@@ -7,8 +7,6 @@ TagManager:
   - Box
   - Wall
   - Door
-  - Red Barrier
-  - Blue Barrier
   layers:
   - Default
   - TransparentFX

@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
             Instance = this;
         }
 
-        if (Player.Instance.canMoveThroughRed)
+        if (Player.Instance.redBarriersActive)
         {
             movesLeftText.text = "Red";
         }
@@ -45,11 +45,11 @@ public class UIManager : MonoBehaviour
         // //Debug.Log(remainingMoves);
         // movesLeftText.text = remainingMoves.ToString();
         
-        if (Player.Instance.canMoveThroughRed)
+        if (Player.Instance.redBarriersActive)
         {
             movesLeftText.text = "Red";
         }
-        else if(!Player.Instance.canMoveThroughRed)
+        else if(!Player.Instance.redBarriersActive)
         {
             movesLeftText.text = "Blue";
         }

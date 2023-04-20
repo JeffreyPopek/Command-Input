@@ -1773,6 +1773,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 462497021798407574, guid: 89c74542e26a8bd46994add7c2b97330, type: 3}
   m_PrefabInstance: {fileID: 462497020919443152}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &562967285 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 462497021798407575, guid: 89c74542e26a8bd46994add7c2b97330, type: 3}
+  m_PrefabInstance: {fileID: 462497020919443152}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe493bd15676f84cbe822f34481f9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &591108628
 GameObject:
   m_ObjectHideFlags: 0
@@ -2765,6 +2776,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 307939846872918661, guid: 47d51675771e93e489efed97374790a2, type: 3}
   m_PrefabInstance: {fileID: 307939847233274358}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &902821576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 307939846872918658, guid: 47d51675771e93e489efed97374790a2, type: 3}
+  m_PrefabInstance: {fileID: 307939847233274358}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe493bd15676f84cbe822f34481f9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &915998296
 GameObject:
   m_ObjectHideFlags: 0
@@ -5359,8 +5381,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd6082cf41b9ea940808217695b18305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRed: 0
-  switchList: []
+  redSwitchList:
+  - {fileID: 562967285}
+  blueSwitchList:
+  - {fileID: 902821576}
 --- !u!4 &1645190016
 Transform:
   m_ObjectHideFlags: 0
@@ -6855,8 +6879,16 @@ PrefabInstance:
       value: Blue Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 307939846872918663, guid: 47d51675771e93e489efed97374790a2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 307939846872918663, guid: 47d51675771e93e489efed97374790a2, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 307939846872918663, guid: 47d51675771e93e489efed97374790a2, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 534771012174984754, guid: 47d51675771e93e489efed97374790a2, type: 3}
       propertyPath: m_IsTrigger
@@ -6876,8 +6908,16 @@ PrefabInstance:
       value: Red Barrier
       objectReference: {fileID: 0}
     - target: {fileID: 462497021798407572, guid: 89c74542e26a8bd46994add7c2b97330, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 462497021798407572, guid: 89c74542e26a8bd46994add7c2b97330, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 462497021798407572, guid: 89c74542e26a8bd46994add7c2b97330, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 462497021798407574, guid: 89c74542e26a8bd46994add7c2b97330, type: 3}
       propertyPath: m_RootOrder

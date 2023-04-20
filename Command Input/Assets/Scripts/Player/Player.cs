@@ -156,6 +156,8 @@ public class Player : MonoBehaviour
             if (lastGestureID == "Circle")
             {
                 redBarriersActive = !redBarriersActive;
+
+                //BarrierManager.Instance.SwitchWallsLogic();
                 //Debug.Log(canMoveThroughRed);
 
                 //return and enum, have a checker in update that does to worldmanager

@@ -4,48 +4,54 @@ using UnityEngine;
 
 public class BarrierManager : MonoBehaviour
 {
+    //public static BarrierManager Instance { get; private set; }
     [SerializeField] private Switches[] redSwitchList;
     
     [SerializeField] private Switches[] blueSwitchList;
 
-    public LayerMask wallLayer;   
-    public LayerMask notWallLayer;    
-
-
-
-    private void Awake()
-    {
-
-    }
+    private LayerMask wallLayer = 3;
+    private LayerMask notWallLayer = 0;
+    // private int wallLayer = LayerMask.NameToLayer("Default");
+    // private int notWallLayer = LayerMask.NameToLayer("Wall");
+    
 
     private void Update()
     {
-        if (Player.Instance.redBarriersActive == true)
-        {
-            foreach (Switches element in redSwitchList)
-            {
-                gameObject.layer = notWallLayer;
-            }
-            
-            foreach (Switches element in blueSwitchList)
-            {
-                gameObject.layer = wallLayer;
-            }
+        SwitchWallsLogic();
+    }
 
-        }
-        
-        else if (Player.Instance.redBarriersActive == false)
+    public void SwitchWallsLogic()
+    {
+        switch (Player.Instance.redBarriersActive)
         {
-            foreach (Switches element in redSwitchList)
+            case true:
             {
-                gameObject.layer = wallLayer;
-            }
+                foreach (Switches element in redSwitchList)
+                {
+                    element.gameObject.layer = notWallLayer;
+                }
             
-            foreach (Switches element in blueSwitchList)
+                foreach (Switches element in blueSwitchList)
+                {
+                    element.gameObject.layer = wallLayer;
+                }
+
+                break;
+            }
+            case false:
             {
-                gameObject.layer = notWallLayer;
+                foreach (Switches element in redSwitchList)
+                {
+                    element.gameObject.layer = wallLayer;
+                }
+            
+                foreach (Switches element in blueSwitchList)
+                {
+                    element.gameObject.layer = notWallLayer;
+                }
+
+                break;
             }
         }
-
     }
 }
