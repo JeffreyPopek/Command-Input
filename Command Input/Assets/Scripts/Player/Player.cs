@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
@@ -11,6 +12,8 @@ public class Player : MonoBehaviour
     public static Player Instance { get; private set; }
 
     public LayerMask wallLayer;
+
+    public LayerMask boxLayer;
     
     //RETRY FOR TESTING
     private Scene currentScene;
@@ -78,11 +81,12 @@ public class Player : MonoBehaviour
     {
         //raycast
         RaycastHit2D hit;
+        RaycastHit2D boxHit;
         
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.up) * 1f, Color.red);
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.down) * 1f, Color.red);
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.left) * 1f, Color.red);
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.right) * 1f, Color.red);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.up), Color.red);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.down), Color.red);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.left), Color.red);
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector2.right), Color.red);
 
 
         // if (hit)    
@@ -100,7 +104,19 @@ public class Player : MonoBehaviour
         {
             if (lastGestureID == "up")
             {
-                hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up), 1f, wallLayer);
+                boxHit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up), 1f, boxLayer);
+
+                if (boxHit)
+                {
+                    hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up), 2f, wallLayer);
+                }
+                else
+                {
+                    hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up), 1f, wallLayer);
+
+                }
+                
+                
                 if (!hit)
                 {
                     StartCoroutine(MovePlayer(Vector3.up));
@@ -113,8 +129,19 @@ public class Player : MonoBehaviour
             
             if (lastGestureID == "down")
             {
-                hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.down), 1f, wallLayer);
+                
+                boxHit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.down), 1f, boxLayer);
 
+                if (boxHit)
+                {
+                    hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.down), 2f, wallLayer);
+                }
+                else
+                {
+                    hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.down), 1f, wallLayer);
+
+                }
+                
                 if (!hit)
                 {
                     StartCoroutine(MovePlayer(Vector3.down));
@@ -127,8 +154,18 @@ public class Player : MonoBehaviour
             
             if (lastGestureID == "left")
             {
-                hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.left), 1f, wallLayer);
+                boxHit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.left), 1f, boxLayer);
 
+                if (boxHit)
+                {
+                    hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.left), 2f, wallLayer);
+                }
+                else
+                {
+                    hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.left), 1f, wallLayer);
+
+                }
+                
                 if (!hit)
                 {
                     StartCoroutine(MovePlayer(Vector3.left));
@@ -141,7 +178,17 @@ public class Player : MonoBehaviour
             
             if (lastGestureID == "right")
             {
-                hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.right), 1f, wallLayer);
+                boxHit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.right), 1f, boxLayer);
+
+                if (boxHit)
+                {
+                    hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.right), 2f, wallLayer);
+                }
+                else
+                {
+                    hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.right), 1f, wallLayer);
+
+                }
                 
                 if (!hit)
                 {
