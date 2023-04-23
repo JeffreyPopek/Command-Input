@@ -17,22 +17,34 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Testing Scenes/EmptyLevelTemplate.unity
     guid: 19dff1c94164714498c7996fed6c8793
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ButtonsTest.unity
     guid: 49af93123d1c47145913ccbcc2df3b56
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/BarrierTest.unity
     guid: eee077a3287eaef47bd3223de17bf774
   - enabled: 0
-    path: Assets/Scenes/Testing Scenes/Jackson_Scene.unity
-    guid: 2755b64c47e69564d8a78553bc65c0e7
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/Testing Scenes/Tyler_Test_Level.unity
     guid: dafa3258c01cfa249a156251623e90f3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SceneHub(TESTING).unity
     guid: b57c8d93e337de7459efa4e7b40f99a7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing Scenes/Jake_Scene.unity
     guid: d045fbf3ef86a4149abf265c2ac3c380
+  - enabled: 1
+    path: Assets/Scenes/Sprint4Testing/Open_Scene.unity
+    guid: 47a0b237d08c2734dadfde4fd141589e
+  - enabled: 1
+    path: Assets/Scenes/Sprint4Testing/TylerSceneTesting.unity
+    guid: 333856edd33d1e143bc6677f60cb9563
+  - enabled: 1
+    path: Assets/Scenes/Sprint4Testing/JakeSceneTesting.unity
+    guid: 4b59043707d9452408e89a9ee99315c5
+  - enabled: 1
+    path: Assets/Scenes/Sprint4Testing/End_Scene.unity
+    guid: f80ef877c85351645bacc63d1f1e68d9
   m_configObjects: {}

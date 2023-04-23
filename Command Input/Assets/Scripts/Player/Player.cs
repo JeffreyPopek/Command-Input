@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
@@ -63,15 +62,15 @@ public class Player : MonoBehaviour
 
         CheckGestureIDLogic();
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(currentScene.name);
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene(4);
-        }
+        // if (Input.GetKeyDown(KeyCode.R))
+        // {
+        //     SceneManager.LoadScene(currentScene.name);
+        // }
+        //
+        // if (Input.GetKeyDown(KeyCode.Escape))
+        // {
+        //     SceneManager.LoadScene(4);
+        // }
 
 
 

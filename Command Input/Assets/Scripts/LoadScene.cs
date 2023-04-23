@@ -5,23 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    public void LoadSceneButtons()
+    public void LoadTyler()
     {
         SceneManager.LoadScene(1);
     }
     
-    public void LoadSceneSwitches()
-    {
-        SceneManager.LoadScene(1);
-    }
-    
-    public void LoadSceneJackson()
+    public void LoadJake()
     {
         SceneManager.LoadScene(2);
-    }
-    
-    public void LoadSceneTyler()
-    {
-        SceneManager.LoadScene(3);
     }
 }

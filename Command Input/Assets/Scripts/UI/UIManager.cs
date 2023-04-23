@@ -7,12 +7,9 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
-
-
-    private int remainingMoves;
     
     //UI Text
-    [SerializeField] private TextMeshProUGUI movesLeftText;
+    [SerializeField] private TextMeshProUGUI barrierActive;
 
 
     private void Awake()
@@ -28,14 +25,13 @@ public class UIManager : MonoBehaviour
 
         if (Player.Instance.redBarriersActive)
         {
-            movesLeftText.text = "Red";
+            barrierActive.text = "Red";
         }
         else
         {
-            movesLeftText.text = "Blue";
+            barrierActive.text = "Blue";
         }
 
-        remainingMoves = Player.Instance.remainingMoves;
     }
 
     private void Update()
@@ -47,11 +43,11 @@ public class UIManager : MonoBehaviour
         
         if (Player.Instance.redBarriersActive)
         {
-            movesLeftText.text = "Red";
+            barrierActive.text = "Red";
         }
         else if(!Player.Instance.redBarriersActive)
         {
-            movesLeftText.text = "Blue";
+            barrierActive.text = "Blue";
         }
     }
 }
