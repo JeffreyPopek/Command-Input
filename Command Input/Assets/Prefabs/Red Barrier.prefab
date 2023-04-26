@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 462497021798407575}
   - component: {fileID: 7528175674473852278}
   - component: {fileID: 5536147202880885192}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Red Barrier
   m_TagString: Red Barrier
   m_Icon: {fileID: 0}

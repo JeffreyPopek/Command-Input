@@ -105,6 +105,9 @@ MonoBehaviour:
   boxLayer:
     serializedVersion: 2
     m_Bits: 64
+  barrierLayer:
+    serializedVersion: 2
+    m_Bits: 128
   moveSpeed: 5
   redBarriersActive: 0
   remainingMoves: 5

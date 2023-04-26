@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 307939846872918658}
   - component: {fileID: 534771012174984754}
   - component: {fileID: 5050361666511539146}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Blue Barrier
   m_TagString: Blue Barrier
   m_Icon: {fileID: 0}

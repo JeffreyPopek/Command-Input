@@ -10,7 +10,7 @@ public class BarrierManager : MonoBehaviour
     [SerializeField] private Switches[] blueSwitchList;
 
     private LayerMask wallLayer = 3;
-    private LayerMask notWallLayer = 0;
+    private LayerMask notWallLayer = 7;
     // private int wallLayer = LayerMask.NameToLayer("Default");
     // private int notWallLayer = LayerMask.NameToLayer("Wall");
     

@@ -18,4 +18,4 @@ MonoBehaviour:
   emailText: Hey time to do your job! <br>I need you to test this new drone thing.
     I attached an image of the commands it can do.  Finish all the tests by tomorrow
     or you're fired.
-  emailImage: {fileID: 21300000, guid: d8effeabb6f975e499b0ca7edeefbd96, type: 3}
+  emailImage: {fileID: 21300000, guid: 9c0d6ec706e01ce448aea81584af092b, type: 3}

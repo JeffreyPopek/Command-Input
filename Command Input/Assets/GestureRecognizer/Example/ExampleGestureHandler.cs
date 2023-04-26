@@ -4,13 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using GestureRecognizer;
 using System.Linq;
+using TMPro;
 
 public class ExampleGestureHandler : MonoBehaviour
 {
 	public string lastGestureID = "";
 	public bool waitingForInput = true;
 	
-	public Text textResult;
+	//public Text textResult;
+
+	public TextMeshProUGUI textResult;
 
 	public Transform referenceRoot;
 

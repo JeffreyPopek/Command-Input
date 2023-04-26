@@ -14,6 +14,8 @@ public class EmailDisplay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI EmailText;
     [SerializeField] private Image EmailImage;
 
+    
+
 
     void Start()
     {
