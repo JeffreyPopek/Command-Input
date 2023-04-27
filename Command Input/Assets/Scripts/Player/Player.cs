@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
         //     Debug.Log("something not hit");
         // }
 
-        if (!waitingForInput)
+        if (!waitingForInput && remainingMoves != 0)
         {
             if (lastGestureID == "up")
             {
@@ -128,6 +128,8 @@ public class Player : MonoBehaviour
                 {
                     Debug.Log("nah");
                 }
+                
+                remainingMoves--;
             }
             
             else if (lastGestureID == "down")
@@ -153,6 +155,8 @@ public class Player : MonoBehaviour
                 {
                     Debug.Log("nah");
                 }
+                
+                remainingMoves--;
             }
             
             else if (lastGestureID == "left")
@@ -177,6 +181,8 @@ public class Player : MonoBehaviour
                 {
                     Debug.Log("nah");
                 }
+                
+                remainingMoves--;
             }
             
             else if (lastGestureID == "right")
@@ -201,6 +207,8 @@ public class Player : MonoBehaviour
                 {
                     Debug.Log("nah");
                 }
+                
+                remainingMoves--;
             }
             
             else if (lastGestureID == "Circle")
@@ -218,11 +226,13 @@ public class Player : MonoBehaviour
 
                     Debug.Log("nah");
                 }
+                
+                remainingMoves--;
             }
             
             else
             {
-                Debug.Log("HJerdsadasd");
+                Debug.Log("not a move");
 
             }
             
@@ -238,7 +248,6 @@ public class Player : MonoBehaviour
             // }
             
             _exampleGestureHandler.waitingForInput = true;
-            remainingMoves--;
 
             
         }
@@ -249,6 +258,11 @@ public class Player : MonoBehaviour
     {
         if (other.gameObject.tag == "Box")
             other.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+    }
+
+    public int GetRemainingMoves()
+    {
+        return remainingMoves;
     }
     
 

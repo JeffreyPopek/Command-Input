@@ -10,6 +10,9 @@ public class UIManager : MonoBehaviour
     
     //UI Text
     [SerializeField] private TextMeshProUGUI barrierActive;
+    
+    [SerializeField] private TextMeshProUGUI movesRemaining;
+
 
 
     private void Awake()
@@ -31,6 +34,8 @@ public class UIManager : MonoBehaviour
         {
             barrierActive.text = "Blue";
         }
+        
+        movesRemaining.text = Player.Instance.GetRemainingMoves().ToString();
 
     }
 
@@ -40,6 +45,9 @@ public class UIManager : MonoBehaviour
         //
         // //Debug.Log(remainingMoves);
         // movesLeftText.text = remainingMoves.ToString();
+        
+        movesRemaining.text = Player.Instance.GetRemainingMoves().ToString();
+
         
         if (Player.Instance.redBarriersActive)
         {
