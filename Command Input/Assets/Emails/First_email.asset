@@ -10,10 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69e24552632f0464b930bd9cc1989168, type: 3}
-  m_Name: test
+  m_Name: First_email
   m_EditorClassIdentifier: 
   emailTitle: Orientation
   emailSender: Jmann@exotherm.co
   senderImage: {fileID: 21300000, guid: 0779ad3feec52124e97114bcbb12ef13, type: 3}
-  emailText: 
+  emailText: "I\u2019m a busy man, and I have neither the time nor the interest to
+    give you a \u201Cwelcome to the team\u201D speech. This training course will
+    explain how to perform your duties as an Exotherm drone operator - it\u2019s
+    so simple a toddler could do it, so finish it quickly and don\u2019t even think
+    about trying to pad out your timecard by pretending you're too stupid to finish. "
   emailImage: {fileID: 21300000, guid: fcba9c031f6850a4e8403af281ef6da6, type: 3}

@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69e24552632f0464b930bd9cc1989168, type: 3}
-  m_Name: test
+  m_Name: RespawnWalls_level_email
   m_EditorClassIdentifier: 
-  emailTitle: Orientation
+  emailTitle: Almost done
   emailSender: Jmann@exotherm.co
   senderImage: {fileID: 21300000, guid: 0779ad3feec52124e97114bcbb12ef13, type: 3}
-  emailText: 
+  emailText: "These are the final crates that need to be moved- I\u2019m not expecting
+    much from you at this point, but do me a favor and try not to fuck it up (I know
+    that may be asking a lot from you). "
   emailImage: {fileID: 21300000, guid: fcba9c031f6850a4e8403af281ef6da6, type: 3}

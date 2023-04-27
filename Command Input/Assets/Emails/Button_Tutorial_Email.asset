@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69e24552632f0464b930bd9cc1989168, type: 3}
-  m_Name: test
+  m_Name: Button_Tutorial_Email
   m_EditorClassIdentifier: 
-  emailTitle: Orientation
+  emailTitle: Get to work
   emailSender: Jmann@exotherm.co
   senderImage: {fileID: 21300000, guid: 0779ad3feec52124e97114bcbb12ef13, type: 3}
-  emailText: 
+  emailText: "I fucking told you not to take your time didn\u2019t I?! Pull that
+    shit again and I\u2019ll throw your ass out of here. We have some crates that
+    need to be stacked in specific locations- use the drone to push them. Show me
+    you're not completely braindead."
   emailImage: {fileID: 21300000, guid: fcba9c031f6850a4e8403af281ef6da6, type: 3}

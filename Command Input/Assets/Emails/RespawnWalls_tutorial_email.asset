@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69e24552632f0464b930bd9cc1989168, type: 3}
-  m_Name: test
+  m_Name: RespawnWalls_tutorial_email
   m_EditorClassIdentifier: 
-  emailTitle: Orientation
+  emailTitle: Final Job
   emailSender: Jmann@exotherm.co
   senderImage: {fileID: 21300000, guid: 0779ad3feec52124e97114bcbb12ef13, type: 3}
-  emailText: 
+  emailText: "Alrighty, recently the company found an even more effective way to
+    bring down power costs- these new doors only stay open for a limited time, then
+    automatically close. I know that\u2019s annoying but we wouldn\u2019t have to
+    do it if idiots like you weren\u2019t always leaving them open."
   emailImage: {fileID: 21300000, guid: fcba9c031f6850a4e8403af281ef6da6, type: 3}
