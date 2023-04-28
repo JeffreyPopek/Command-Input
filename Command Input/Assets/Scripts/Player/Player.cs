@@ -5,11 +5,13 @@ using UnityEngine;
 using TMPro;
 using UnityEditor;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
     public static Player Instance { get; private set; }
 
+    
     public LayerMask wallLayer;
 
     public LayerMask boxLayer;
@@ -55,7 +57,7 @@ public class Player : MonoBehaviour
         
         _exampleGestureHandler = exampleGesturePatternObject.GetComponent<ExampleGestureHandler>();
     }
-
+    
     private void Update()
     {
         GetVariables();
@@ -294,4 +296,8 @@ public class Player : MonoBehaviour
         isMoving = false;
     }
 
+    public int playerMoved()
+    {
+        return -1;
+    }
 }
