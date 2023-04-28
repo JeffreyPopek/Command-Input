@@ -2542,7 +2542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastGestureID: 
   waitingForInput: 1
-  textResult: {fileID: 791419950}
+  textResult: {fileID: 0}
   referenceRoot: {fileID: 29869229}
 --- !u!114 &796271669
 MonoBehaviour:
@@ -3073,7 +3073,7 @@ SpriteRenderer:
   m_Size: {x: 50.12, y: 28.192501}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &995375863

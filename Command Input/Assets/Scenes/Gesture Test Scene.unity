@@ -1701,6 +1701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003bd3798d83e0d419c0bc6d3e59785c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchingBarrier: 0
   boxPrefab: {fileID: 0}
   buttonPrefab: {fileID: 0}
   doorPrefab: {fileID: 0}
@@ -2429,7 +2430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastGestureID: 
   waitingForInput: 1
-  textResult: {fileID: 791419950}
+  textResult: {fileID: 0}
   referenceRoot: {fileID: 29869229}
 --- !u!114 &796271669
 MonoBehaviour:
@@ -5889,6 +5890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5eabb29e29226974c9825c802a326b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonPressed: 0
 --- !u!58 &1862710898
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6016,7 +6018,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e5386657ba3740428ec3cc0917821ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movesLeftText: {fileID: 318505186}
+  barrierActive: {fileID: 0}
+  movesRemaining: {fileID: 0}
 --- !u!1 &1982466927
 GameObject:
   m_ObjectHideFlags: 0
