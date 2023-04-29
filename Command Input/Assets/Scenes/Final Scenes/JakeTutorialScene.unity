@@ -12875,6 +12875,14 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6138997564887763425, guid: 1219804b58a5ff74eab44ff77cf235bf, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138997564887763425, guid: 1219804b58a5ff74eab44ff77cf235bf, type: 3}
+      propertyPath: remainingMoves
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138997564887763425, guid: 1219804b58a5ff74eab44ff77cf235bf, type: 3}
       propertyPath: exampleGesturePatternObject
       value: 
       objectReference: {fileID: 490131703}
