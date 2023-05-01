@@ -8,12 +8,16 @@ using UnityEngine.UI;
 public class EmailDisplay : MonoBehaviour
 {
     [SerializeField] private EmailManager emailManager;
+    [SerializeField] private Clock clock;
     private Email email;
+    
     
     [SerializeField] private TextMeshProUGUI EmailTitle;
     [SerializeField] private Image SenderImage;
     [SerializeField] private TextMeshProUGUI SenderName;
     [SerializeField] private TextMeshProUGUI EmailText;
+
+    [SerializeField] private TextMeshProUGUI TimeSent;
     //SerializeField] private Image EmailImage;
     
 
@@ -25,6 +29,8 @@ public class EmailDisplay : MonoBehaviour
         SenderImage.sprite = email.senderImage;
         SenderName.text = email.emailSender;
         EmailText.text = email.emailText;
+
+        TimeSent.text = clock.GetTime();
         //EmailImage.sprite = email.emailImage;
     }
 }

@@ -12,6 +12,8 @@ public class Clock : MonoBehaviour
 
     public static float timer = 540.0f;
 
+    private string actualTime;
+    
     private void Update()
     {
         timer += Time.deltaTime / IN_GAME_TIME;
@@ -23,5 +25,12 @@ public class Clock : MonoBehaviour
         int minutes = Mathf.FloorToInt(timer / 60.0f);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
         timerText.text = string.Format("{00 : 00}:{01 : 00}", minutes, seconds);
+
+        actualTime = timerText.text;
+    }
+
+    public string GetTime()
+    {
+        return actualTime;
     }
 }
