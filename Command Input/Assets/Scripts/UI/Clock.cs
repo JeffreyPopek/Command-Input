@@ -7,7 +7,7 @@ using TMPro;
 public class Clock : MonoBehaviour
 {
     private const float IN_GAME_TIME = 15f;
-    //public static int 
+    
     [SerializeField] private TextMeshProUGUI timerText;
 
     public static float timer = 540.0f;
@@ -27,10 +27,12 @@ public class Clock : MonoBehaviour
         timerText.text = string.Format("{00 : 00}:{01 : 00}", minutes, seconds);
 
         actualTime = timerText.text;
+        Debug.Log(timerText.text);
     }
 
     public string GetTime()
     {
+        Debug.Log("actual time" + actualTime);
         return actualTime;
     }
 }

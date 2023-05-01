@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class EmailManager : MonoBehaviour
 {
-    //public static EmailManager Instance { get; private set; }
-
     [SerializeField] private GameObject emailWindow;
 
     [SerializeField] private GameObject emailNotification;
@@ -22,7 +20,7 @@ public class EmailManager : MonoBehaviour
     {
         emailWindow.SetActive(false);
 
-        StartMoving();
+        Invoke("MoveNotification", 2);
     }
 
     public void EmailButtonPressed()
@@ -45,20 +43,12 @@ public class EmailManager : MonoBehaviour
         
         emailNotification.SetActive(false);
     }
-    
-    public void StartMoving()
-    {
-        StartCoroutine(WaitForTime());
 
+    private void MoveNotification()
+    {
         emailNotification.transform.LeanMoveLocal(new Vector2(530, -450), 1);
-        
         //FindObjectOfType<AudioManager>().Play("Notification");
-    }
 
-    private IEnumerator WaitForTime()
-    {
-        yield return new WaitForSeconds(3);
     }
-
 
 }

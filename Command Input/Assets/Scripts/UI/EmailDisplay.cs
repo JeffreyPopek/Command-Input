@@ -19,18 +19,29 @@ public class EmailDisplay : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI TimeSent;
     //SerializeField] private Image EmailImage;
-    
+
+    private bool setTime = false;
 
     private void Start()
     {
         email = emailManager.GetEmail();
-        
+
         EmailTitle.text = email.emailTitle;
         SenderImage.sprite = email.senderImage;
         SenderName.text = email.emailSender;
         EmailText.text = email.emailText;
+        
 
-        TimeSent.text = clock.GetTime();
         //EmailImage.sprite = email.emailImage;
+    }
+
+    private void Update()
+    {
+        if (!setTime)
+        {
+            TimeSent.text = clock.GetTime();
+            setTime = true;
+        }
+
     }
 }
