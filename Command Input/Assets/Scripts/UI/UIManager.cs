@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI movesRemaining;
 
+    [SerializeField] private GameObject barriertextGameObject;
+
 
 
     private void Awake()
@@ -39,6 +41,11 @@ public class UIManager : MonoBehaviour
         
         movesRemaining.text = Player.Instance.GetRemainingMoves().ToString();
 
+        if (!isBarrierLevel)
+        {
+            barriertextGameObject.SetActive(false);
+        }
+
     }
 
     private void Update()
@@ -50,17 +57,14 @@ public class UIManager : MonoBehaviour
         
         movesRemaining.text = Player.Instance.GetRemainingMoves().ToString();
 
-        if (isBarrierLevel)
+        if (Player.Instance.redBarriersActive)
         {
-            if (Player.Instance.redBarriersActive)
-            {
-                barrierActive.text = "Red";
-            }
-            else if(!Player.Instance.redBarriersActive)
-            {
-                barrierActive.text = "Blue";
-            }  
+            barrierActive.text = "Red";
         }
+        else if(!Player.Instance.redBarriersActive)
+        {
+            barrierActive.text = "Blue";
+        }  
 
     }
 }

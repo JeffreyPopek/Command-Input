@@ -21,6 +21,8 @@ public class EmailManager : MonoBehaviour
     private void Start()
     {
         emailWindow.SetActive(false);
+
+        StartMoving();
     }
 
     public void EmailButtonPressed()
@@ -44,8 +46,19 @@ public class EmailManager : MonoBehaviour
         emailNotification.SetActive(false);
     }
     
-    
-    
-    
-    
+    public void StartMoving()
+    {
+        StartCoroutine(WaitForTime());
+
+        emailNotification.transform.LeanMoveLocal(new Vector2(530, -450), 1);
+        
+        //FindObjectOfType<AudioManager>().Play("Notification");
+    }
+
+    private IEnumerator WaitForTime()
+    {
+        yield return new WaitForSeconds(3);
+    }
+
+
 }
