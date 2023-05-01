@@ -5,8 +5,18 @@ using UnityEngine;
 
 public class EmailManager : MonoBehaviour
 {
+    //public static EmailManager Instance { get; private set; }
+
     [SerializeField] private GameObject emailWindow;
+
+    [SerializeField] private GameObject emailNotification;
     private bool isEmailTabOpen = false;
+
+    private bool isEmailOpen = false;
+
+    [SerializeField] private Email[] emails;
+
+    [SerializeField] private int emailToShow;
 
     private void Start()
     {
@@ -19,6 +29,22 @@ public class EmailManager : MonoBehaviour
         
         emailWindow.SetActive(isEmailTabOpen);
     }
+
+    public Email GetEmail()
+    {
+        return emails[emailToShow];
+    }
+
+    public void OpenEmailFromNotification()
+    {
+        isEmailTabOpen = true;
+        
+        emailWindow.SetActive(isEmailTabOpen);
+        
+        emailNotification.SetActive(false);
+    }
+    
+    
     
     
     

@@ -295,9 +295,4 @@ public class Player : MonoBehaviour
         
         isMoving = false;
     }
-
-    public int playerMoved()
-    {
-        return -1;
-    }
 }
