@@ -10,7 +10,7 @@ public class Clock : MonoBehaviour
     //public static int 
     [SerializeField] private TextMeshProUGUI timerText;
 
-    private float timer = 540.0f;
+    public static float timer = 540.0f;
 
     private void Update()
     {

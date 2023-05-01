@@ -7,6 +7,8 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance { get; private set; }
+
+    [SerializeField] private bool isBarrierLevel;
     
     //UI Text
     [SerializeField] private TextMeshProUGUI barrierActive;
@@ -48,14 +50,17 @@ public class UIManager : MonoBehaviour
         
         movesRemaining.text = Player.Instance.GetRemainingMoves().ToString();
 
-        
-        if (Player.Instance.redBarriersActive)
+        if (isBarrierLevel)
         {
-            barrierActive.text = "Red";
+            if (Player.Instance.redBarriersActive)
+            {
+                barrierActive.text = "Red";
+            }
+            else if(!Player.Instance.redBarriersActive)
+            {
+                barrierActive.text = "Blue";
+            }  
         }
-        else if(!Player.Instance.redBarriersActive)
-        {
-            barrierActive.text = "Blue";
-        }
+
     }
 }
