@@ -12,6 +12,8 @@ public class EmailManager : MonoBehaviour
 
     private bool isEmailOpen = false;
 
+    private bool emailSent = false;
+    
     [SerializeField] private Email[] emails;
 
     [SerializeField] private int emailToShow;
@@ -20,7 +22,10 @@ public class EmailManager : MonoBehaviour
     {
         emailWindow.SetActive(false);
 
-        Invoke("MoveNotification", 2);
+        if (!emailSent)
+        {
+            Invoke("MoveNotification", 2);
+        }
     }
 
     public void EmailButtonPressed()
@@ -48,6 +53,8 @@ public class EmailManager : MonoBehaviour
     {
         emailNotification.transform.LeanMoveLocal(new Vector2(530, -450), 1);
         //FindObjectOfType<AudioManager>().Play("Notification");
+
+        emailSent = true;
 
     }
 

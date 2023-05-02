@@ -8,7 +8,8 @@ public class ButtonManager : MonoBehaviour
 {
     public static ButtonManager Instance { get; private set; }
 
-    [SerializeField] private GameObject door;
+    [SerializeField] private bool shouldDoorBeOpen;
+    [SerializeField] private Door door;
     [SerializeField] private Button[] buttonList;
 
     private bool allButtonsActivated = false;
@@ -16,7 +17,8 @@ public class ButtonManager : MonoBehaviour
     
     private void Awake()
     {
-        door.SetActive(false);
+        door.doorOpen = shouldDoorBeOpen;
+        //door.SetActive(false);
     }
     
     private void Update()
@@ -39,14 +41,9 @@ public class ButtonManager : MonoBehaviour
 
     private void DoorLogic()
     {
-        if(!allButtonsActivated)
-        {
-            door.SetActive(false);
-        }
-
         if (allButtonsActivated)
         {
-            door.SetActive(true);
+            door.doorOpen = true;
         }
     }
 

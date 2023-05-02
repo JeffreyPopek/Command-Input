@@ -15,7 +15,7 @@ MonoBehaviour:
   emailTitle: Pull it together
   emailSender: Jmann@exotherm.co
   yourName: 
-  senderImage: {fileID: 21300000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
+  senderImage: {fileID: 21300000, guid: f5783e4379135e447ad2e2f993f0463b, type: 3}
   emailText: "Wow, if you were a seventh grader I might think what you just did was
     impressive. This isn\u2019t a charity, you either do your job right or you're
     not getting paid. Also, if any equipment gets damaged, it\u2019s coming out of
