@@ -15,6 +15,7 @@ public class EmailDisplay : MonoBehaviour
     [SerializeField] private TextMeshProUGUI EmailTitle;
     [SerializeField] private Image SenderImage;
     [SerializeField] private TextMeshProUGUI SenderName;
+    [SerializeField] private TextMeshProUGUI YourName;
     [SerializeField] private TextMeshProUGUI EmailText;
 
     [SerializeField] private TextMeshProUGUI TimeSent;
@@ -29,6 +30,7 @@ public class EmailDisplay : MonoBehaviour
         EmailTitle.text = email.emailTitle;
         SenderImage.sprite = email.senderImage;
         SenderName.text = email.emailSender;
+        YourName.text = Login.playerUsername;
         EmailText.text = email.emailText;
         
 

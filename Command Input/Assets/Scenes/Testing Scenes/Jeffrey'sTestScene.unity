@@ -12223,6 +12223,7 @@ MonoBehaviour:
   EmailTitle: {fileID: 237806418}
   SenderImage: {fileID: 1982721426}
   SenderName: {fileID: 418869519}
+  YourName: {fileID: 0}
   EmailText: {fileID: 709616851}
   TimeSent: {fileID: 1462166477}
 --- !u!1 &2118584437

@@ -9,6 +9,7 @@ public class Email : ScriptableObject
 {
     public new string emailTitle;
     public string emailSender;
+    public string yourName;
     public Sprite senderImage;
     public string emailText;
     public Sprite emailImage;

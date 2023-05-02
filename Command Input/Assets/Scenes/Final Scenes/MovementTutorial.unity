@@ -5034,7 +5034,7 @@ PrefabInstance:
     - target: {fileID: 942027255499805014, guid: ce34f51a834c3ff4c9fed9f2a9e130fc, type: 3}
       propertyPath: barrierActive
       value: 
-      objectReference: {fileID: 472740399}
+      objectReference: {fileID: 1662195435}
     - target: {fileID: 942027255499805014, guid: ce34f51a834c3ff4c9fed9f2a9e130fc, type: 3}
       propertyPath: movesLeftText
       value: 
@@ -7532,6 +7532,17 @@ Transform:
   m_Father: {fileID: 874960611}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1662195435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4497583001966571418, guid: fd3bda96c056a724d8e887b659b518b3, type: 3}
+  m_PrefabInstance: {fileID: 590239342}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1708689969
 GameObject:
   m_ObjectHideFlags: 0

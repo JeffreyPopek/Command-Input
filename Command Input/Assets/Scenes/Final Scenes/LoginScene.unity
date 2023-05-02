@@ -1322,7 +1322,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1674269189}
         m_TargetAssemblyTypeName: Login, Assembly-CSharp
-        m_MethodName: ReadUsernameSInput
+        m_MethodName: ReadUsernameInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
