@@ -45,7 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emailWindow: {fileID: 0}
+  emailNotification: {fileID: 0}
   emails:
   - {fileID: 11400000, guid: 8f1b2c2e1369511489d4bb4f21c9c77c, type: 2}
   - {fileID: 11400000, guid: 627d39cc3d7222f4ab496d2951bdcab4, type: 2}
+  - {fileID: 11400000, guid: f690b65b72ba7194fa94acbcceca84e9, type: 2}
+  - {fileID: 11400000, guid: 62357784a9c9fb146a423189ee051824, type: 2}
   emailToShow: 0

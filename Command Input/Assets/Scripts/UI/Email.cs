@@ -12,7 +12,7 @@ public class Email : ScriptableObject
     public string yourName;
     public Sprite senderImage;
     public string emailText;
-    public Sprite emailImage;
+    //public Sprite emailImage;
 
     public void Print()
     {
