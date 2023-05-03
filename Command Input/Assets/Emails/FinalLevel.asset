@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69e24552632f0464b930bd9cc1989168, type: 3}
-  m_Name: RespawnWalls_level_email
+  m_Name: FinalLevel
   m_EditorClassIdentifier: 
-  emailTitle: Almost done
+  emailTitle: Final Job
   emailSender: Jmann@exotherm.co
   yourName: 
   senderImage: {fileID: 21300000, guid: f5783e4379135e447ad2e2f993f0463b, type: 3}

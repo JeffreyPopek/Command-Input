@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69e24552632f0464b930bd9cc1989168, type: 3}
-  m_Name: RespawnWalls_tutorial_email
+  m_Name: Button_Level2
   m_EditorClassIdentifier: 
-  emailTitle: Final Job
+  emailTitle: Stop wasting power
   emailSender: Jmann@exotherm.co
   yourName: 
   senderImage: {fileID: 21300000, guid: f5783e4379135e447ad2e2f993f0463b, type: 3}
-  emailText: "Alrighty, recently the company found an even more effective way to
-    bring down power costs- these new doors only stay open for a limited time, then
-    automatically close. I know that\u2019s annoying but we wouldn\u2019t have to
-    do it if idiots like you weren\u2019t always leaving them open."
+  emailText: "Your Drone operation so far has been sloppy to say the least. I\u2019ve
+    given you some extra juice until now because your the new guy, but usually we
+    only charge the drone exactly as much as needed to finish a job (it save on the
+    electrical bill).Also, if the drone loses power with a job incomplete, the time
+    lost recharging comes out of your paycheck. Did I forget to tell you that?"
