@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final Scenes/Tutorials/MovementTutorial.unity
     guid: 818e266650dc6a441b6818cffd9f4e1f
+  - enabled: 1
+    path: Assets/Scenes/Final Scenes/Level3.unity
+    guid: 6374604969f72f847ad23f572b3ac8cf
   m_configObjects: {}
