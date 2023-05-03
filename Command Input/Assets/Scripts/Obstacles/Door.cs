@@ -8,6 +8,7 @@ public class Door : MonoBehaviour
 {
     [SerializeField] private int sceneToLoad;
     
+    [SerializeField] private Sprite closedDoor;
     [SerializeField] private Sprite openDoor;
     public bool doorOpen = false;
 
@@ -20,12 +21,7 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!doorOpen)
-        {
-            return;
-        }
-        
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && doorOpen)
         {
             Debug.Log("LOADING SCENE");
             SceneManager.LoadScene(sceneToLoad);
@@ -38,5 +34,14 @@ public class Door : MonoBehaviour
         {
             _spriteRenderer.sprite = openDoor;
         }
+        else
+        {
+            _spriteRenderer.sprite = closedDoor;
+        }
+    }
+
+    public void OpenDoor()
+    {
+        doorOpen = true;
     }
 }

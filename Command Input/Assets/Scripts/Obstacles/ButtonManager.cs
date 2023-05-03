@@ -43,7 +43,7 @@ public class ButtonManager : MonoBehaviour
     {
         if (allButtonsActivated)
         {
-            door.doorOpen = true;
+            door.OpenDoor();
         }
     }
 
