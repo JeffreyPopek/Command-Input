@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
     
     [SerializeField] private TextMeshProUGUI movesRemaining;
 
+    //[SerializeField] private EmailManager _emailManager;
+
     //[SerializeField] private GameObject barriertextGameObject;
 
     [SerializeField] private GameObject notesPanel;
@@ -64,6 +66,7 @@ public class UIManager : MonoBehaviour
         {
             barrierActive.text = "Blue";
         }  
+        
 
     }
 
@@ -71,5 +74,16 @@ public class UIManager : MonoBehaviour
     {
         notesActive = !notesActive;
         notesPanel.SetActive(notesActive);
+        
+        // if (_emailManager.GetEmailActive())
+        // {
+        //     _emailManager.EmailButtonPressed();
+        // }
+
+    }
+
+    public bool GetNotesActive()
+    {
+        return notesActive;
     }
 }

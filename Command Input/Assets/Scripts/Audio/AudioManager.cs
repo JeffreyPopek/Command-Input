@@ -54,4 +54,12 @@ public class AudioManager : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("Ambient");
     }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            FindObjectOfType<AudioManager>().Play("MouseClick");
+        }
+    }
 }

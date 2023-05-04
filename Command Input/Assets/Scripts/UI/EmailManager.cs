@@ -1,10 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class EmailManager : MonoBehaviour
 {
+    //public static EmailManager Instance { get; private set; }
+    
+    
     [SerializeField] private GameObject emailWindow;
 
     [SerializeField] private GameObject emailNotification;
@@ -28,11 +32,21 @@ public class EmailManager : MonoBehaviour
         }
     }
 
+    public bool GetEmailActive()
+    {
+        return isEmailOpen;
+    }
+    
     public void EmailButtonPressed()
     {
         isEmailTabOpen = !isEmailTabOpen;
         
         emailWindow.SetActive(isEmailTabOpen);
+
+        if (UIManager.Instance.GetNotesActive())
+        {
+            UIManager.Instance.NotesPanelToggle();
+        }
     }
 
     public Email GetEmail()

@@ -5168,6 +5168,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100662631}
     - target: {fileID: 942027255499805014, guid: ce34f51a834c3ff4c9fed9f2a9e130fc, type: 3}
+      propertyPath: _emailManager
+      value: 
+      objectReference: {fileID: 672359148}
+    - target: {fileID: 942027255499805014, guid: ce34f51a834c3ff4c9fed9f2a9e130fc, type: 3}
       propertyPath: barrierActive
       value: 
       objectReference: {fileID: 474994180}
