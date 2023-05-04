@@ -52,7 +52,7 @@ public class EmailManager : MonoBehaviour
     private void MoveNotification()
     {
         emailNotification.transform.LeanMoveLocal(new Vector2(530, -450), 1);
-        //FindObjectOfType<AudioManager>().Play("Notification");
+        FindObjectOfType<AudioManager>().Play("Notification");
 
         emailSent = true;
 

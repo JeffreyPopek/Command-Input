@@ -33,6 +33,7 @@ public class EmailDisplay : MonoBehaviour
         YourName.text = Login.playerUsername;
         EmailText.text = email.emailText;
         
+        //TimeSent.text = clock.GetTime();
 
         //EmailImage.sprite = email.emailImage;
     }

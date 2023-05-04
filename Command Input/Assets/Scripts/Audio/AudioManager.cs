@@ -49,4 +49,9 @@ public class AudioManager : MonoBehaviour
         }
         s.source.Play();
     }
+
+    private void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("Ambient");
+    }
 }

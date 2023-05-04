@@ -63,3 +63,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: ButtonPressed
+    clip: {fileID: 8300000, guid: 3cce5a5a771d24f4fb854dab273c5ceb, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Ambient
+    clip: {fileID: 8300000, guid: 1cc392a39837ffc40b849d9408a8562c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

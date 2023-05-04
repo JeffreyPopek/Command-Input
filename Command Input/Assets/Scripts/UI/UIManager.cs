@@ -17,6 +17,9 @@ public class UIManager : MonoBehaviour
 
     //[SerializeField] private GameObject barriertextGameObject;
 
+    [SerializeField] private GameObject notesPanel;
+    private bool notesActive = false;
+
 
 
     private void Awake()
@@ -46,6 +49,7 @@ public class UIManager : MonoBehaviour
         //     barriertextGameObject.SetActive(false);
         // }
 
+        notesPanel.SetActive(notesActive);
     }
 
     private void Update()
@@ -61,5 +65,11 @@ public class UIManager : MonoBehaviour
             barrierActive.text = "Blue";
         }  
 
+    }
+
+    public void NotesPanelToggle()
+    {
+        notesActive = !notesActive;
+        notesPanel.SetActive(notesActive);
     }
 }
