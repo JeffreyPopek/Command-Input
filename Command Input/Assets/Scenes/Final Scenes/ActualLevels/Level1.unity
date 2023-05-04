@@ -9987,7 +9987,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4943392947467035408, guid: 76d6974bc54ba034496ad1d518f2855b, type: 3}
       propertyPath: emailToShow
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4943392947467035408, guid: 76d6974bc54ba034496ad1d518f2855b, type: 3}
       propertyPath: emailWindow
