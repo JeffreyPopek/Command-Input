@@ -37,6 +37,7 @@ public class ButtonManager : MonoBehaviour
         }
 
         DoorLogic();
+
     }
 
     private void DoorLogic()

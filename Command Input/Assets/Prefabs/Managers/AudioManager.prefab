@@ -81,3 +81,21 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: DoorOpen
+    clip: {fileID: 8300000, guid: 7092a5058968efb41804ffa144512781, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ButtonUnpressed
+    clip: {fileID: 8300000, guid: 3cce5a5a771d24f4fb854dab273c5ceb, type: 3}
+    volume: 0.5
+    pitch: 0.8
+    loop: 0
+    source: {fileID: 0}
+  - name: DoorClosed
+    clip: {fileID: 8300000, guid: 7092a5058968efb41804ffa144512781, type: 3}
+    volume: 0.5
+    pitch: 0.8
+    loop: 0
+    source: {fileID: 0}

@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     //[SerializeField] private EmailManager _emailManager;
 
     //[SerializeField] private GameObject barriertextGameObject;
-
+    
     [SerializeField] private GameObject notesPanel;
     private bool notesActive = false;
 

@@ -5,61 +5,34 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/Scenes/Testing Scenes/Jeffrey'sTestScene.unity
-    guid: dcb58f8b553da554794409e5a2f15656
   - enabled: 1
-    path: Assets/Scenes/Final Scenes/LoginScene.unity
+    path: Assets/Scenes/LoginScene.unity
     guid: 02bef9951d1288e40a6133d911fa04da
   - enabled: 1
-    path: Assets/Scenes/Final Scenes/Tutorials/MovementTutorial.unity
+    path: Assets/Scenes/Tutorial_1.unity
     guid: 818e266650dc6a441b6818cffd9f4e1f
   - enabled: 1
-    path: Assets/Scenes/Final Scenes/ActualLevels/JakeLevel3.unity
-    guid: 6374604969f72f847ad23f572b3ac8cf
+    path: Assets/Scenes/Tutorial_2.unity
+    guid: ee7a0c20a44865b4a82f315f037ff211
+  - enabled: 1
+    path: Assets/Scenes/Tutorial_3.unity
+    guid: 1e180f055a010bf4a9d3450e36e371a1
+  - enabled: 1
+    path: Assets/Scenes/Level_1.unity
+    guid: a88765ef05ec5c649bdf27a7a2d1e967
+  - enabled: 1
+    path: Assets/Scenes/Level_2.unity
+    guid: 3196052aa350ced4883c823673fc8e63
+  - enabled: 1
+    path: Assets/Scenes/Level_3.unity
+    guid: 4ebad8b8e53b3934aac589b492558961
+  - enabled: 1
+    path: Assets/Scenes/Level_4.unity
+    guid: 29f75cca4b5c2b14cb37f24bf4b5baef
+  - enabled: 1
+    path: Assets/Scenes/Level_5.unity
+    guid: 7525ca36ab498cb428bfcfab81c2f488
+  - enabled: 1
+    path: Assets/Scenes/Fired.unity
+    guid: 205ef5aba2abf224e957d944c1d33a6a
   m_configObjects: {}

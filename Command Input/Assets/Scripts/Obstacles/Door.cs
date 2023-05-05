@@ -14,6 +14,8 @@ public class Door : MonoBehaviour
 
     [SerializeField] private SpriteRenderer _spriteRenderer;
 
+    private bool soundPlayed = true;
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -37,6 +39,7 @@ public class Door : MonoBehaviour
         else
         {
             _spriteRenderer.sprite = closedDoor;
+
         }
     }
 
@@ -44,4 +47,6 @@ public class Door : MonoBehaviour
     {
         doorOpen = true;
     }
+
+    
 }

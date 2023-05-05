@@ -14,6 +14,7 @@ public class Button : MonoBehaviour
         if (other.gameObject.tag == "Box")
         {
             Debug.Log("Button pressed!");
+            FindObjectOfType<AudioManager>().Play("ButtonPressed");
             buttonPressed = true;
         }
     }
@@ -23,6 +24,7 @@ public class Button : MonoBehaviour
         if (other.gameObject.tag == "Box")
         {
             Debug.Log("Button left!");
+            FindObjectOfType<AudioManager>().Play("ButtonUnpressed");
             buttonPressed =  false;
         }
     }
