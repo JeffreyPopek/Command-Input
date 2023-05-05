@@ -207,6 +207,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 607107473}
     m_Modifications:
+    - target: {fileID: 1819406981342079000, guid: 9f8dbda1c39bfff4eb990b21bdd2d1e1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819406981342079000, guid: 9f8dbda1c39bfff4eb990b21bdd2d1e1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819406981342079000, guid: 9f8dbda1c39bfff4eb990b21bdd2d1e1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3081166626180461720, guid: 9f8dbda1c39bfff4eb990b21bdd2d1e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -310,6 +322,26 @@ PrefabInstance:
     - target: {fileID: 3081166626706942152, guid: 9f8dbda1c39bfff4eb990b21bdd2d1e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: NotesPanelToggle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185898705849062901, guid: 9f8dbda1c39bfff4eb990b21bdd2d1e1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3185898705849062901, guid: 9f8dbda1c39bfff4eb990b21bdd2d1e1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4548249674897750574, guid: 9f8dbda1c39bfff4eb990b21bdd2d1e1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4548249674897750574, guid: 9f8dbda1c39bfff4eb990b21bdd2d1e1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4548249674897750574, guid: 9f8dbda1c39bfff4eb990b21bdd2d1e1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f8dbda1c39bfff4eb990b21bdd2d1e1, type: 3}
