@@ -47,8 +47,15 @@ MonoBehaviour:
   emailWindow: {fileID: 0}
   emailNotification: {fileID: 0}
   emails:
-  - {fileID: 11400000, guid: 8f1b2c2e1369511489d4bb4f21c9c77c, type: 2}
-  - {fileID: 11400000, guid: 627d39cc3d7222f4ab496d2951bdcab4, type: 2}
   - {fileID: 11400000, guid: f690b65b72ba7194fa94acbcceca84e9, type: 2}
+  - {fileID: 11400000, guid: 6255ef617c06a41468e6cad2076d0c74, type: 2}
+  - {fileID: 11400000, guid: 627d39cc3d7222f4ab496d2951bdcab4, type: 2}
+  - {fileID: 11400000, guid: 578d39e0963efea4e9b55eb0fb3cac4e, type: 2}
+  - {fileID: 11400000, guid: ac4035bacc3f5ed43a71d0ea878d463b, type: 2}
+  - {fileID: 11400000, guid: ac4035bacc3f5ed43a71d0ea878d463b, type: 2}
+  - {fileID: 11400000, guid: 8f1b2c2e1369511489d4bb4f21c9c77c, type: 2}
+  - {fileID: 11400000, guid: 002b9eb06decbb04a860c31a200ddc47, type: 2}
+  - {fileID: 11400000, guid: 572e863ffa435f5418ff0a288a845105, type: 2}
+  - {fileID: 11400000, guid: 03d61be945a9ad8498b30e1e95f7a68e, type: 2}
   - {fileID: 11400000, guid: 62357784a9c9fb146a423189ee051824, type: 2}
   emailToShow: 0

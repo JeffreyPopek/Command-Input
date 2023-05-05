@@ -17,7 +17,8 @@ MonoBehaviour:
   yourName: 
   senderImage: {fileID: 21300000, guid: f5783e4379135e447ad2e2f993f0463b, type: 3}
   emailText: "I\u2019m a busy man, and I have neither the time nor the interest to
-    give you a \u201Cwelcome to the team\u201D speech. This training course will
-    explain how to perform your duties as an Exotherm drone operator - it\u2019s
-    so simple a toddler could do it, so finish it quickly and don\u2019t even think
-    about trying to pad out your timecard by pretending you're too stupid to finish. "
+    give you a \u201Cwelcome to the team\u201D speech. This training course (with
+    instructions accessible via the NOTES tab)will explain how to perform your duties
+    as an Exotherm drone operator - it\u2019s so simple a toddler could do it, so
+    finish it quickly and don\u2019t even think about trying to pad out your timecard
+    by pretending you're too stupid to finish."
